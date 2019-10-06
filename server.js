@@ -16,7 +16,8 @@ const app = require('./app');
 
 const DB = process.env.DATABASE.replace(
   '{PASSWORD}',
-  process.env.DATABASE_PASSWORD
+  'K6JDeun0J8jwgs51'
+  // process.env.DATABASE_PASSWORD
 );
 
 mongoose

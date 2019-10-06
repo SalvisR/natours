@@ -14,9 +14,11 @@ dotenv.config({
 
 const app = require('./app');
 
+const x = 'K6JDeun0J8jwgs51';
 const DB = process.env.DATABASE.replace(
   '{PASSWORD}',
-  process.env.DATABASE_PASSWORD
+  x
+  // process.env.DATABASE_PASSWORD
 );
 
 mongoose
@@ -25,10 +27,7 @@ mongoose
     useCreateIndex: true,
     useFindAndModify: false
   })
-  .then(() => console.log('DB conncection successfull'))
-  .catch(err => {
-    console.log(err);
-  });
+  .then(() => console.log('DB conncection successfull'));
 
 const port = process.env.PORT || 3000;
 const server = app.listen(port, '127.0.0.1', () => {

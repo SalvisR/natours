@@ -30,6 +30,8 @@ app.set('views', path.join(__dirname, 'views'));
 // Serving static files
 // app.use(express.static(`${__dirname}/public/`));
 app.use(cors());
+// To allow PUT, PATCH, DELETE requests
+app.options('*', cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Set security HTTP headers
